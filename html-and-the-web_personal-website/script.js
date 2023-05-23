@@ -1,5 +1,12 @@
-
 function toggleContent() {
-  var content = document.getElementById("about-content");
-  content.style.display = (content.style.display === "none") ? "block" : "none";
+  var fullContent = document.getElementById("full-content");
+  var moreLink = document.getElementById("more-link");
+
+  if (fullContent.style.display === "none") {
+      fullContent.style.display = "block";
+      moreLink.innerHTML = "Less";
+  } else {
+      fullContent.style.display = "none";
+      moreLink.innerHTML = "More";
+  }
 }
