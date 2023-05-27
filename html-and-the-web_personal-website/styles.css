@@ -247,7 +247,11 @@ flex-grow: 1;
 
 .flex-item:nth-child(1){
 
+<<<<<<< HEAD
   background-color:rgb();
+=======
+  background-color:rgb(204, 85, 0);
+>>>>>>> origin/main
  align-self: stretch;
 
 }
