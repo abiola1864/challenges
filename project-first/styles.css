@@ -127,7 +127,11 @@
     width: 150px; /* Set the desired width */
     margin: 90px; /* Add margin on all sides */
     border-radius: 10px; 
-    
+    box-shadow: 0 2px 8px 1px rgb(0 0 100 /0.2);
+    border-radius: 14px;
+    grid-template-rows: 32px 200px 32px;
+   
+ 
  ;
 
   }
@@ -157,6 +161,7 @@
    /* font-family: "Comic Sans MS", "Comic Sans", cursive;*/
     font-size: 12px;
     margin: auto; 
+    
  
  
 }
@@ -167,27 +172,53 @@
     display: flex;
     position: absolute;
     color: rgb(100, 100, 290);
+    
+    
 
 }
 
 
 
 
+
+  border-radius: 14px;
+
+
+.pizza-section {
+  padding: 20px;
+  box-shadow: 0 2px 8px 1px rgb(0 0 100 /0.2);
+  border-radius: 14px;
+  display: grid;
+  grid-template-rows: 32px 200px 32px;
+  gap: 40px;
+}
+
+
 .tag1{
-  display: flex;
+  display: grid;
 
   border: 2px solid black;
   height: 30px; /* Set the desired height */
   width: 60px; /* Set the desired width */
+
+  gap: 40px;
+
+  box-shadow: 0 2px 8px 1px rgb(0 0 100 /0.2);
+  border-radius: 14px;
+  grid-template-rows: 32px 200px 32px;
  
 }
 
   .tag {
     display: flex;
-  
     border: 2px solid black;
     height: 30px; /* Set the desired height */
     width: 60px; /* Set the desired width */
+   box-shadow: 0 2px 8px 1px rgb(0 0 100 /0.2);
+  border-radius: 14px;
+  display: grid;
+
+  gap: 40px;
    
   }
 
