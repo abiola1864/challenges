@@ -1,76 +1,53 @@
 * {
     font-family: 'Clash Display', sans-serif;
     box-sizing: border-box;
-    padding: 0px;
+   
     margin: 10px; /* Reset default body margin */
-   padding: 0px;
+
    justify-content: center;
    align-items: center;
   }
   
+
+
+
   body {
     font-size: 15px;
     
     font-weight: initial;
     background-color: rgb(255, 255, 255);
 
-
-    margin: 0px; /* Reset default body margin */
-
-
   }
 
 
-  
+
 
   #container {
     position: relative; /* Change to relatibe positioning */
     display: grid;
-  grid-template-rows: 10% 1fr 10% %;
+  grid-template-rows: 10% 1fr 10% ;
     grid-gap: 10px;
-    padding: 10px;
+
     justify-content: center;
     align-content: center;
 
-    
   
   }
 
   .card {
     display: flex;
   flex-direction: column;
-
-    /* 
-    display: flex;
-       /* 
-    justify-content: center;
-    align-items: center; */
     border: 2px solid black;
-    /* height: 200px; /* Set the desired height */
-    /* width: 500px;  */
     border-radius: 10px; 
     position: relative;
+    width:100%;
    
   }
 
 
-   
 
+      
 
-  .card1 {
-  display: flex;
- 
-   border: 3px solid black;
-    height: 80px; /* Set the desired height */
-    /* width: 500px; /* Set the desired width */
-    /* margin: 10px; */
-    justify-content: center;
-    align-content: center;
-    text-align:center;
-    border-radius: 10px; 
-    
-   
-  }
 
 
 
@@ -118,8 +95,12 @@
    
     /*   font-family: "Comic Sans MS", "Comic Sans", cursive;   */
 
+}
 
- 
+.item-text1{
+  display: flex;
+ color: rgb(100, 100, 290);
+
 }
 
 
@@ -198,7 +179,8 @@
 
     position: fixed;
     bottom: 0;
-    left: 49%;
+    right:40;
+    left: 50%;
     transform: translateX(-50%);
     background-color: #f0f0f0;
     border: 0.5px solid black;
@@ -270,22 +252,6 @@
     /* Additional styles as needed */
   }
   
-
-
-  #container_pro  {
-
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
-    height: 200px;
-    width: 500px;
-    margin: 20px;
-    border-radius: 10px;
-    position: relative;
-  }
-
-
 
 
   
@@ -368,115 +334,84 @@
       max-width: 80%;
       margin: 0 auto;
     }
+  }
+
   
-    /* Adjust the width of the cards */
-    .card {
+  
+  
+    /* #container1 {
+      display: grid;
+       grid-template-rows: 30% 1fr 10%;
+      justify-content: center;
+      align-content: center;
+
+   */
+    
+  
+    #container1{
+      position: relative; /* Change to relatibe positioning */
+      
+      display: grid;
+    grid-template-rows: 10% 1fr 10% ;
+      grid-gap: 30px;
+      padding: 10px;
+      justify-content: center;
+      align-content: center;
+  
+    
+    }
+
+
+  
+  
+      
+    .container_pro {
+      display: grid;
+       grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      align-content: center;
+      position: relative;
+      display: flex;
+      border-radius: 10px; 
+      position: relative;
       width:100%;
-    }
-
-/* 
-
   
-  #container {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
+    } 
   
-    justify-content: center;
-    align-content: center;
-
-
-  } */
   
- #leftbar {
-    flex: 1;
-    display: flex;
-
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
- 
-    
-  }
-  
-  #rightbar {
-    display: flex;
-    flex: 1;
-    background-color: gray;
-    flex-direction: column;
-
-    
-    }
-
-
-    #right_bar {
-  width: 25%;
- background: rgb(255, 255, 255);
-  padding: 10px;
+.leftbar_pro {
   display: flex;
-  justify-content:space-evenly;
-} 
-
-
-
-
-  #sidebar_pro  {
-    flex: 1;
-    display: flex;
-
-   
-    justify-content: center;
-    align-items: center;
-    position: relative;
- 
-
-
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: relative;
+  width: 100px; /* Adjust the width as desired */
+  height: 100px; /* Adjust the height as desired */
+  overflow: hidden; /* Ensure the image stays within the circle */
 }
-   
 
+.leftbar_pro img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.leftbar_pro {
+  display: flex;
+ justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 50%; 
+  width: 100px; /* Adjust the width as desired */
+  height: 100px; /* Adjust the height as desired */
+  overflow: hidden; /* Ensure the image stays within the circle */
+}
   
   
-  #sidebar_pro  img {
-    width: 100%;
-    height: 120px; /* Adjust the height as desired */
-     border-radius: 50%; 
-    object-fit: cover; 
-  }
-   
-
- 
-  #rightbar_pro  {
-    flex: 1;
-    display: flex;
-
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
- 
-} 
-  
-
-
-.cardone_pro {
-  flex:1;
-    width: 100%;
-   height: 80px;  Set the desired height */
-   width: 500px; /* Set the desired width */
-    margin: 10px; 
-   border: 1px solid black;
-    
-  }
-
-
- #leftbar_pro img {
-    width: 60px; 
-    height: 60px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-    z-index: 0; 
-  }
     
 
   #leftbar_pro p {
@@ -497,4 +432,4 @@
     border-style: solid;
     border-color: black;
     border-image: initial;
-} */
+}
