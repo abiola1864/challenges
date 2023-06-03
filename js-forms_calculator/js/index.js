@@ -23,9 +23,6 @@ function divide(a, b) {
 
 
 
-
-
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -52,3 +49,34 @@ form.addEventListener("submit", (event) => {
   resultOutput.textContent = result;
 });
 
+
+
+
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+
+//   let result;
+
+//   const numberA = parseFloat(form.elements.numberA.value);
+//   const numberB = parseFloat(form.elements.numberB.value);
+//   const operator = form.elements.operator.value;
+
+//   switch (operator) {
+//     case "add":
+//       result = add(numberA, numberB);
+//       break;
+//     case "subtract":
+//       result = subtract(numberA, numberB);
+//       break;
+//     case "multiply":
+//       result = multiply(numberA, numberB);
+//       break;
+//     case "divide":
+//       result = divide(numberA, numberB);
+//       break;
+//     default:
+//       result = "Invalid operator";
+//   }
+
+//   resultOutput.textContent = result;
+// });
