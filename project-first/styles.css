@@ -22,47 +22,56 @@
 
 
   
-  
+
   #container {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-  
+    position: relative; /* Change to relatibe positioning */
+    display: grid;
+  grid-template-rows: 10% 1fr 10% ;
+    grid-gap: 10px;
+    padding: 10px;
     justify-content: center;
     align-content: center;
 
-
-  }
+    
   
-  #leftbar {
-    flex: 1;
-    display: flex;
+  }
 
-    flex-direction: column;
+  .card {
+    display: flex;
+  flex-direction: column;
+
+    /* 
+    display: flex;
+       /* 
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    border: 2px solid black;
+    /* height: 200px; /* Set the desired height */
+    /* width: 500px;  */
+    border-radius: 10px; 
     position: relative;
- 
-    
+   
   }
-  
-  #rightbar {
-    display: flex;
-    flex: 1;
-    background-color: gray;
-    flex-direction: column;
-
-    
-    }
 
 
-    #right_bar {
-  width: 25%;
- background: rgb(255, 255, 255);
-  padding: 10px;
+   
+
+
+  .card1 {
   display: flex;
-  justify-content:space-evenly;
-}
+ 
+   border: 3px solid black;
+    height: 80px; /* Set the desired height */
+    /* width: 500px; /* Set the desired width */
+    /* margin: 10px; */
+    justify-content: center;
+    align-content: center;
+    text-align:center;
+    border-radius: 10px; 
+    
+   
+  }
+
 
 
 .navigation {
@@ -87,52 +96,15 @@
 
 
 
-  .card {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
-    height: 200px; /* Set the desired height */
-    width: 500px; /* Set the desired width */
-  
-    border-radius: 10px; 
-    position: relative;
- 
-  }
-  
-  
-
-
-  .card1 {
-    display: flex;
-   border: 3px solid black;
-    height: 80px; /* Set the desired height */
-    width: 500px; /* Set the desired width */
-    margin: 10px; /* Add margin on all sides */
-    justify-content: center;
-    align-content: center;
-    text-align:center;
-    border-radius: 10px; 
-    
-   
-  }
-
-
   .cardbox {
  display: flex;
-    border: 1.5px solid black;
-    height: 50px; /* Set the desired height */
-    width: 150px; /* Set the desired width */
-    margin: 90px; /* Add margin on all sides */
-    border-radius: 10px; 
+    border: 0.5px solid black;
+    /* height: 50px;
+    width: 150px;  */
+    margin: 90px; 
     box-shadow: 0 2px 8px 1px rgb(0 0 100 /0.2);
     border-radius: 14px;
-    grid-template-rows: 32px 200px 32px;
-   
- 
- ;
+
 
   }
   
@@ -156,13 +128,11 @@
  .text-conditional, 
 .item-text-cbox{
     display: flex;
-    margin-bottom: 0px; /* Add margin on all sides */
-    text-align:center;
+  
+    align-items: center;
+    justify-content: center;
    /* font-family: "Comic Sans MS", "Comic Sans", cursive;*/
     font-size: 12px;
-    margin: auto; 
-    
- 
  
 }
 
@@ -170,7 +140,7 @@
 
 .tag-container {
     display: flex;
-    position: absolute;
+    position: relative;
     color: rgb(100, 100, 290);
     
     
@@ -216,7 +186,7 @@
     width: 60px; /* Set the desired width */
    box-shadow: 0 2px 8px 1px rgb(0 0 100 /0.2);
   border-radius: 14px;
-  display: grid;
+  position: relative;
 
   gap: 40px;
    
@@ -225,27 +195,23 @@
  
 
   .footer {
+
     position: fixed;
-
     bottom: 0;
-    right: 200;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #f0f0f0;
-    
-    border: 1px solid black;
-    border-radius: 10px; 
-    height: 70px; /* Set the desired height */
-    width: 500px; /* Set the desired width */
+    border: 0.5px solid black;
+    border-radius: 10px;
+    height: 70px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    max-width: 700px; /* Set the desired max-width for the footer */
+  }
 
 
-  }
-  
-  .footer-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-  
-  }
   
   .footer-nav li  {
     display: inline-block;
@@ -269,6 +235,8 @@
     padding: 3px;
     
   }
+
+  
 
   *, :after, :before {
     border: 0 solid #d9d9e3;
@@ -323,90 +291,6 @@
   
   
 
-
- 
-
-  #sidebar_pro  {
-    flex: 1;
-    display: flex;
-
-   
-    justify-content: center;
-    align-items: center;
-    position: relative;
- 
-
-
-}
-  
-
-  
-  
-  #sidebar_pro  img {
-    width: 100%;
-    height: 120px; /* Adjust the height as desired */
-    border-radius: 50%; /* Creates a circular shape */
-    object-fit: cover; /* Ensures the image fills the circular shape */
-   
-  }
-  
-
-
-  #rightbar_pro  {
-    flex: 1;
-    display: flex;
-
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
- 
-}
-  
-
-
-
-.cardone_pro {
-  flex:1;
-    width: 100%;
-   height: 80px; /* Set the desired height */
-   width: 500px; /* Set the desired width */
-   margin: 10px; /* Add margin on all sides */
-   border: 1px solid black;
-    
-  }
-  
-
-
-  #leftbar_pro img {
-    width: 60px; /* Adjust the width as desired */
-    height: 60px; /* Adjust the height as desired */
-    border-radius: 50%; /* Creates a circular shape */
-    object-fit: cover; /* Ensures the image fills the circular shape */
-    z-index: 0; /* Set a lower value than the sidebar */
-  }
-  
-
-  #leftbar_pro p {
-    font-size: 1em;
-    line-height: 1}
-  
-
-.author__bio {
-  margin: 0;
-}
-
-
-
-.tag_pro {
-    display: flex;
-    height: 30px;
-    width: 100px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: black;
-    border-image: initial;
-}
 
 
 
@@ -467,7 +351,6 @@
 
   .dark {
     background-color: rgb(100, 100, 290);
-
     color: white;
 
   }
@@ -480,6 +363,138 @@
 
 
 
-  
+  @media screen and (max-width: 768px) {
+    /* Update the footer width based on container width for screens up to 768px */
+    .footer {
+      width: calc(90% - 20px); /* Adjust the percentage value as needed */
+    }
 
   
+
+
+
+
+/* 
+
+  
+  #container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  
+    justify-content: center;
+    align-content: center;
+
+
+  } */
+  
+ #leftbar {
+    flex: 1;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+ 
+    
+  }
+  
+  #rightbar {
+    display: flex;
+    flex: 1;
+    background-color: gray;
+    flex-direction: column;
+
+    
+    }
+
+
+    #right_bar {
+  width: 25%;
+ background: rgb(255, 255, 255);
+  padding: 10px;
+  display: flex;
+  justify-content:space-evenly;
+} 
+
+
+
+
+  #sidebar_pro  {
+    flex: 1;
+    display: flex;
+
+   
+    justify-content: center;
+    align-items: center;
+    position: relative;
+ 
+
+
+}
+   
+
+  
+  
+  #sidebar_pro  img {
+    width: 100%;
+    height: 120px; /* Adjust the height as desired */
+     border-radius: 50%; 
+    object-fit: cover; 
+  }
+   
+
+ 
+  #rightbar_pro  {
+    flex: 1;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+ 
+} 
+  
+
+
+.cardone_pro {
+  flex:1;
+    width: 100%;
+   height: 80px;  Set the desired height */
+   width: 500px; /* Set the desired width */
+    margin: 10px; 
+   border: 1px solid black;
+    
+  }
+
+
+ #leftbar_pro img {
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    z-index: 0; 
+  }
+    
+
+  #leftbar_pro p {
+    font-size: 1em;
+    line-height: 1}
+  
+
+.author__bio {
+  margin: 0;
+} 
+
+
+.tag_pro {
+    display: flex;
+    height: 30px;
+    width: 100px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    border-image: initial;
+} */
