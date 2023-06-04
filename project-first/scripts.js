@@ -86,6 +86,36 @@ originalTextElement.textContent=  conditionalTextElement.textContent ; // Restor
 
 
 
+
+
+
+// Get the footer element
+const footer = document.querySelector('.footer');
+
+// Function to add the 'hover' class to the footer when the mouse enters the area
+function handleMouseEnter() {
+  footer.classList.add('hover');
+}
+
+// Function to remove the 'hover' class from the footer when the mouse leaves the area
+function handleMouseLeave() {
+  footer.classList.remove('hover');
+}
+
+// Add event listeners to the footer for mouse enter and leave events
+footer.addEventListener('mouseenter', handleMouseEnter);
+footer.addEventListener('mouseleave', handleMouseLeave);
+
+
+
+
+
+
+
+
+
+
+
 // const firstChoiceButton = document.querySelector('[data-js="choice-button-1"]');
 // const AnswerButton = document.querySelector('[data-js="active-button"]');
 // const originalTextElement = document.querySelector('.item-text-cbox');

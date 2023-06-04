@@ -15,8 +15,10 @@
     font-size: 15px;
     
     font-weight: initial;
-    background-color: rgb(255, 255, 255);
+     background-color: rgb(255, 255, 255);
 
+
+    /* background-color: #074a41; */
   }
 
 
@@ -25,11 +27,14 @@
   #container {
     position: relative; /* Change to relatibe positioning */
     display: grid;
-  grid-template-rows: 10% 1fr 10% ;
+    /* grid-template-rows: 10% 1fr 40%; */
     grid-gap: 10px;
 
     justify-content: center;
     align-content: center;
+    margin-bottom: 200px; /* Add margin to create space between the container and footer */
+    
+
 
   
   }
@@ -40,9 +45,29 @@
     border: 2px solid black;
     border-radius: 10px; 
     position: relative;
-    width:100%;
-   
+
+    
+   width: 600px; 
+height: 400px; 
+
+   overflow: hidden; /* Hide overflowing content */
+
   }
+
+
+
+  .card1 {
+    display: flex;
+  flex-direction: column;
+    border: 2px solid black;
+    border-radius: 10px; 
+
+
+  }
+
+  
+
+  
 
 
 
@@ -78,7 +103,7 @@
     border: 0.5px solid black;
     /* height: 50px;
     width: 150px;  */
-    margin: 90px; 
+   
     box-shadow: 0 2px 8px 1px rgb(0 0 100 /0.2);
     border-radius: 14px;
 
@@ -88,19 +113,19 @@
 
 
 .item-text{
-    display: flex;
+
    color: rgb(100, 100, 290);
     text-align:center;
-
-   
+    word-wrap: break-word;
     /*   font-family: "Comic Sans MS", "Comic Sans", cursive;   */
 
 }
 
 .item-text1{
-  display: flex;
+ 
  color: rgb(100, 100, 290);
-
+ text-align: center;
+ word-wrap: break-word;
 }
 
 
@@ -176,21 +201,27 @@
  
 
   .footer {
-
+    flex-wrap: wrap;
     position: fixed;
-    bottom: 0;
-    right:40;
-    left: 50%;
+    bottom:0;
+    right:50;
+    left: 49.5%;
     transform: translateX(-50%);
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
+    background-color: rgb(100, 100, 290);
     border: 0.5px solid black;
     border-radius: 10px;
-    height: 70px;
+    height: 60px;
+    width: 600px;
+    padding: 20px;
     display: flex;
-    align-content: center;
-    justify-content: center;
-
+    align-content: space-evenly ;
+    
+  transition: background-color 0.3s; /* Add a smooth transition effect */
     max-width:700px; /* Set the desired max-width for the footer */
+
+    margin-top: 20px; /* Add margin to create space between the footer and container */
+
   }
 
 
@@ -198,6 +229,7 @@
   .footer-nav li  {
     display: inline-block;
     margin: 0 10px;
+
   }
   
 
@@ -210,11 +242,13 @@
  
 
   .footer-nav img {
+    display: flex;
     width: 50px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    padding: 3px;
+    height: 50px;
+    align-content: space-between ;
+    margin: 0 40px;
+
+    max-width: 100%;
     
   }
 
@@ -336,6 +370,11 @@
     }
   }
 
+
+
+
+ 
+
   
   
   
@@ -433,3 +472,19 @@
     border-color: black;
     border-image: initial;
 }
+
+ 
+
+.footer.hover {
+  background-color:  rgb(255, 255, 255); /* Set the background color for the footer when hovered */
+
+}
+
+@media screen and (max-width: 1024px) {
+  .footer-nav img {
+    width: 30px; /* Adjust the width as desired */
+    max-width: 100%;
+  }
+}
+
+
