@@ -5,6 +5,11 @@ const conditionalTextElement = document.querySelector('.text-conditional');
 const quizContentElements = document.querySelectorAll('.item-text');
 const answerOptionElements = document.querySelectorAll('.tag-container span');
 
+
+
+
+
+
 let quizData = []; // Initialize an empty array to store quiz data
 let currentIndex = -1; // Initialize the current quiz line index to -1
 let updateTimeout = null; // Store the timeout reference
@@ -31,8 +36,10 @@ function updateQuiz() {
 
   answerOptionElements.forEach((answerOptionElement, index) => {
     answerOptionElement.textContent = answerOptions[index];
+    
   });
 }
+
 
 // Load the quiz data from the CSV file
 fetch('quiz.csv')
@@ -44,6 +51,17 @@ fetch('quiz.csv')
   .catch(error => {
     console.error('Error:', error);
   });
+
+
+
+
+
+
+
+
+
+
+
 
 firstChoiceButton.addEventListener("click", () => {
   firstChoiceButton.classList.toggle("dark");
