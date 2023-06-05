@@ -255,6 +255,11 @@ function createBookmarkedCard() {
   bookmarkIconClick.classList.add('bookmark-icon-click');
   bookmarkIconClick.innerHTML = '<i class="fas fa-bookmark"></i>';
 
+    // Apply the color style to the bookmark icon
+    const bookmarkIconElement = bookmarkIconClick.querySelector('.fas.fa-bookmark');
+    bookmarkIconElement.style.color = 'red';
+    bookmarkIconElement.style.fontSize = '30px';
+
   const cardText = document.createElement('h2');
   cardText.classList.add('item-text');
   cardText.textContent = updatedContent;
