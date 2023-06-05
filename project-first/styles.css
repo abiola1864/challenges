@@ -270,7 +270,7 @@ height: 400px;
 
 
 
-.bookmark-icon-click{
+.bookmark-icon.active{
     position: absolute;
     top: -30px;
     right: -10px;
@@ -488,3 +488,66 @@ height: 400px;
 }
 
 
+
+
+.header {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 0;
+  background: var(--primary);
+  border-bottom: 1px solid var(--black);
+}
+
+.header__title {
+  text-align: center;
+}
+
+
+.card-list {
+  padding: 10rem 2rem 4rem 2rem;
+  max-width: 45rem;
+  margin: 0 auto;
+}
+
+.card-list__item {
+  margin: 0 0 4rem;
+}
+
+
+:root {
+  --primary: #ffffff;
+  --secondary: #ff4a11;
+  --secondary-light: #fddcd2;
+  --white: #ffffff;
+  --black: #252629;
+  --ff-primary: sans-serif;
+  --ff-serif: serif;
+  --fs-200: 0.6rem;
+  --fs-300: 0.8rem;
+  --fs-400: 1rem;
+  --fs-500: 1.1rem;
+  --fs-600: 1.5rem;
+  --fs-900: 1.75rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* h1,
+h2,
+h3 {
+  line-height: 1.2;
+} */
+
+
+ul li,
+ol li {
+  list-style: none;
+  padding: 0;
+}

@@ -14,7 +14,11 @@ let quizData = []; // Initialize an empty array to store quiz data
 let currentIndex = -1; // Initialize the current quiz line index to -1
 let updateTimeout = null; // Store the timeout reference
 
-// Function to choose the next quiz line and update the content and answer options
+// Define variables to store the updated quiz content and tags
+let updatedContent = '';
+let updatedTags = [];
+
+// Function to update the quiz content and tags
 function updateQuiz() {
   // Increment the current index
   currentIndex = (currentIndex + 1) % quizData.length;
@@ -29,16 +33,49 @@ function updateQuiz() {
     quizLine.tag3
   ].sort(() => Math.random() - 0.5);
 
+  // Store the updated content and tags
+  updatedContent = quizLine.content;
+  updatedTags = answerOptions;
+
   // Update the quiz content and randomized answer options
   quizContentElements.forEach((contentElement) => {
-    contentElement.textContent = quizLine.content;
+    contentElement.textContent = updatedContent;
   });
 
   answerOptionElements.forEach((answerOptionElement, index) => {
-    answerOptionElement.textContent = answerOptions[index];
-    
+    answerOptionElement.textContent = updatedTags[index];
   });
 }
+
+// Create the bookmarked card with updated content and tags
+function createBookmarkedCard() {
+  // Create the necessary HTML elements
+  const listItem = document.createElement('li');
+  listItem.classList.add('card-list__item');
+
+  const article = document.createElement('article');
+  article.classList.add('card', 'card2');
+
+  // ... Rest of the code to create other elements ...
+
+  // Use the updated content and tags in the card
+  cardText.textContent = updatedContent;
+  tag1.textContent = updatedTags[0];
+  tag2.textContent = updatedTags[1];
+  tag3.textContent = updatedTags[2];
+
+  // ... Rest of the code to append elements ...
+
+  // Append the bookmarked card to the card list
+  cardList.appendChild(listItem);
+}
+
+
+
+
+
+
+
 
 
 // Load the quiz data from the CSV file
@@ -94,6 +131,9 @@ originalTextElement.textContent=  conditionalTextElement.textContent ; // Restor
     }, 1000);
  
 });
+
+
+
 
 
 
@@ -169,6 +209,132 @@ footer.addEventListener('mouseleave', handleMouseLeave);
     
 //   }
 // });
+
+
+
+
+const bookmarkIcon = document.querySelector('.bookmark-icon');
+
+bookmarkIcon.addEventListener('click', () => {
+  bookmarkIcon.classList.toggle('active');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Get the parent element where the bookmarked cards will be added
+const cardList = document.querySelector('.card-list');
+
+
+
+// Create the bookmarked card
+function createBookmarkedCard() {
+  // Create the necessary HTML elements
+
+
+  const listItem = document.createElement('li');
+  listItem.classList.add('card-list__item');
+
+  const article = document.createElement('article');
+  article.classList.add('card', 'card2');
+
+  const bookmarkIconClick = document.createElement('span');
+  bookmarkIconClick.classList.add('bookmark-icon-click');
+  bookmarkIconClick.innerHTML = '<i class="fas fa-bookmark"></i>';
+
+  const cardText = document.createElement('h2');
+  cardText.classList.add('item-text');
+  cardText.textContent = updatedContent;
+
+  const cardButton = document.createElement('button');
+  cardButton.classList.add('cardbox');
+  cardButton.dataset.js = 'choice-button-1';
+
+  const buttonText = document.createElement('h2');
+  buttonText.classList.add('item-text-cbox');
+  buttonText.dataset.originalText = 'Hide Answer';
+  buttonText.textContent = 'Show Answer';
+
+  const conditionalText = document.createElement('h2');
+  conditionalText.classList.add('text-conditional');
+  conditionalText.textContent = 'Show Answer';
+
+  const tagContainer = document.createElement('div');
+  tagContainer.classList.add('tag-container');
+
+  const tag1 = document.createElement('span');
+  tag1.classList.add('tag1');
+  tag1.dataset.js = 'active-button';
+  tag1.textContent = updatedTags[0];
+
+  const tag2 = document.createElement('span');
+  tag2.classList.add('tag');
+  tag2.textContent = updatedTags[1];
+
+  const tag3 = document.createElement('span');
+  tag3.classList.add('tag');
+  tag3.textContent = updatedTags[2];
+
+  // Append the elements to their respective parent elements
+  cardButton.appendChild(buttonText);
+  cardButton.appendChild(conditionalText);
+
+  tagContainer.appendChild(tag1);
+  tagContainer.appendChild(tag2);
+  tagContainer.appendChild(tag3);
+
+  article.appendChild(bookmarkIconClick);
+  article.appendChild(cardText);
+  article.appendChild(cardButton);
+  article.appendChild(tagContainer);
+
+  listItem.appendChild(article);
+
+  // Append the bookmarked card to the card list
+  cardList.appendChild(listItem);
+
+ 
+  
+
+}
+
+
+
+
+// Add click event listener to the bookmark icon
+bookmarkIcon.addEventListener('click', () => {
+
+
+  // Check if the bookmark icon is active
+  const isBookmarked = bookmarkIcon.classList.contains('active');
+
+  if (isBookmarked) {
+    // Create the bookmarked card
+    createBookmarkedCard();
+  }
+
+  
+});
+
+
+
+
+
+
+
 
 
 
