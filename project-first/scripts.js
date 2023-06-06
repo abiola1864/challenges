@@ -47,28 +47,28 @@ function updateQuiz() {
   });
 }
 
-// Create the bookmarked card with updated content and tags
-function createBookmarkedCard() {
-  // Create the necessary HTML elements
-  const listItem = document.createElement('li');
-  listItem.classList.add('card-list__item');
+// // Create the bookmarked card with updated content and tags
+// function createBookmarkedCard() {
+//   // Create the necessary HTML elements
+//   const listItem = document.createElement('li');
+//   listItem.classList.add('card-list__item');
 
-  const article = document.createElement('article');
-  article.classList.add('card', 'card2');
+//   const article = document.createElement('article');
+//   article.classList.add('card', 'card2');
 
-  // ... Rest of the code to create other elements ...
+//   // ... Rest of the code to create other elements ...
 
-  // Use the updated content and tags in the card
-  cardText.textContent = updatedContent;
-  tag1.textContent = updatedTags[0];
-  tag2.textContent = updatedTags[1];
-  tag3.textContent = updatedTags[2];
+//   // Use the updated content and tags in the card
+//   cardText.textContent = updatedContent;
+//   tag1.textContent = updatedTags[0];
+//   tag2.textContent = updatedTags[1];
+//   tag3.textContent = updatedTags[2];
 
-  // ... Rest of the code to append elements ...
+//   // ... Rest of the code to append elements ...
 
-  // Append the bookmarked card to the card list
-  cardList.appendChild(listItem);
-}
+//   // Append the bookmarked card to the card list
+//   cardList.appendChild(listItem);
+// }
 
 
 
@@ -223,25 +223,13 @@ bookmarkIcon.addEventListener('click', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // Get the parent element where the bookmarked cards will be added
 const cardList = document.querySelector('.card-list');
 
 
 
 // Create the bookmarked card
-function createBookmarkedCard() {
+function createNewCard() {
   // Create the necessary HTML elements
 
 
@@ -311,10 +299,24 @@ function createBookmarkedCard() {
   // Append the bookmarked card to the card list
   cardList.appendChild(listItem);
 
- 
-  
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -328,12 +330,11 @@ bookmarkIcon.addEventListener('click', () => {
 
   if (isBookmarked) {
     // Create the bookmarked card
-    createBookmarkedCard();
+    createNewCard();
   }
 
   
 });
-
 
 
 
