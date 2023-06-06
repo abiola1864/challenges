@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/clash-display" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="./form.js" defer></script>
+    <title>Quiz App</title>
+</head>
+<body>
+    
+    <main>
+        <h1>Service</h1>
+        <h2>Customer complaint form</h2>
+
+    <header id="header" class="header">
+        <h1 class="header__title">Form</h1>
+        
+      </header>
+
+
+      <p>
+        Your Quiz question
+      </p>
+      <p>
+        <strong>Note:</strong> Your question and answer will be used to generate a<strong>NEW CARD</strong> 
+      </p>
+
+      <form data-js="form">
+       
+            <fieldset>
+                <legend>Your Question:</legend>
+              
+                <label for="your-question"></label>
+                <textarea
+                name="your-question"
+                id="your-question"
+                rows="10"
+                cols="50"
+                maxlength="160"
+                placeholder="Please drop your quiz question here.  Let is be less than 160 characters"
+              ></textarea>
+              <p id="character-count">Characters remaining: 160</p>
+               <p id="error-message"></p>
+              </fieldset>
+      
+           
+
+              <fieldset>
+                <legend>Your Answer: </legend>
+              
+                <label for="your-answer"></label>
+                <textarea
+                name="your-answer"
+                id="your-answer"
+                rows="10"
+                cols="50"
+                placeholder="Give a one-word answer to it"
+              ></textarea>
+              </fieldset>
+
+
+
+              <fieldset>
+                <legend>Tag:</legend>
+              
+                <label for="your-tag"></label>
+                <textarea
+                name="your-tag"
+                id="your-answer"
+                rows="3"
+                cols="50"
+                placeholder="Add one tag for now"
+              ></textarea>
+              </fieldset>
+      
+
+      
+
+              <button type="submit">submit</button>
+
+
+
+
+
+
+
+
+    </form>
+
+            </main>
+
+
+
+</body>
+</html>

@@ -551,3 +551,39 @@ ol li {
   list-style: none;
   padding: 0;
 }
+
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+legend {
+  background-color: black;
+  color: white;
+}
+
+button {
+  margin: auto;
+  width: fit-content;
+}
+
+input[type="submit"] {
+  margin: auto;
+  width: fit-content;
+}
+
+textarea {
+  width: fit-content;
+  border: 2px solid black;
+}

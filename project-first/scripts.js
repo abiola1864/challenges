@@ -343,6 +343,3 @@ bookmarkIcon.addEventListener('click', () => {
 
 
 
-
-
-
