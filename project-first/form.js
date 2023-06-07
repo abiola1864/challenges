@@ -84,7 +84,6 @@ form.reset();
 
 document.body.append(article);
 
-  
 //    // Append the card to the desired location in index.html
 //  const targetArticle = document.querySelector('#target-article');
 //  targetArticle.appendChild(article);
