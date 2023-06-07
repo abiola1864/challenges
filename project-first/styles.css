@@ -223,14 +223,10 @@ h3, .navigation {
 
 
 
-
-
-
-  
-  nav ul li a.active {
-
-    color: blue;
-   
+  .footer-nav ul li a img:hover {
+    /* Style for hover state */
+    filter: invert(80%);
+    /* Additional styles as needed */
   }
   
  

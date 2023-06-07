@@ -277,7 +277,7 @@ originalTextElement.textContent=  conditionalTextElement.textContent ; // Restor
 
 
   
-    }, 8000);
+    }, 3000);
     AnswerButton.classList.remove("dark"); // Remove the "dark" class
     updateQuiz();
    
