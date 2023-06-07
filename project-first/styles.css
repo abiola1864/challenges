@@ -3,7 +3,7 @@
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    margin:5px;
+    margin:5px; /* Reset default body margin */
     padding: 4px;
   }
   
@@ -152,7 +152,7 @@ h3, .navigation {
 }
 
 
-.tag1{
+.tag1, .tag2, .tag3{
   display: grid;
 
   border: 2px solid black;

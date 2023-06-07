@@ -1,5 +1,7 @@
 const firstChoiceButton = document.querySelector('[data-js="choice-button-1"]');
 const AnswerButton = document.querySelector('[data-js="active-button"]');
+const AnswerButton2 = document.querySelector('[data-js="active-button2"]');
+const AnswerButton3 = document.querySelector('[data-js="active-button3"]');
 const originalTextElement = document.querySelector('.item-text-cbox');
 const conditionalTextElement = document.querySelector('.text-conditional');
 const quizContentElements = document.querySelectorAll('.item-text');
@@ -7,16 +9,13 @@ const answerOptionElements = document.querySelectorAll('.tag-container span');
 
 
 
-
-
-
-let quizData = []; // Initialize an empty array to store quiz data
-let currentIndex = -1; // Initialize the current quiz line index to -1
+ let quizData = []; // Initialize an empty array to store quiz data 
+ let currentIndex = -1; // Initialize the current quiz line index to -1
 let updateTimeout = null; // Store the timeout reference
 
 // Define variables to store the updated quiz content and tags
-let updatedContent = '';
-let updatedTags = [];
+ let updatedContent = '';
+ let updatedTags = [];
 
 // Function to update the quiz content and tags
 function updateQuiz() {
@@ -26,16 +25,21 @@ function updateQuiz() {
   // Get the quiz line at the current index
   const quizLine = quizData[currentIndex];
 
-  // Randomize the order of answer options
+  // Store the correct answer and its column
+  const correctAnswer = quizLine.tag1;
+  const correctAnswerColumn = 'tag1'; // Assuming the correct answer is always in 'tag1' column
+
+  // Randomize the order of answer options and store their associated columns
   const answerOptions = [
-    quizLine.tag1,
-    quizLine.tag2,
-    quizLine.tag3
+    { tag: quizLine.tag1, column: 'tag1' },
+    { tag: quizLine.tag2, column: 'tag2' },
+    { tag: quizLine.tag3, column: 'tag3' }
   ].sort(() => Math.random() - 0.5);
 
   // Store the updated content and tags
   updatedContent = quizLine.content;
-  updatedTags = answerOptions;
+  updatedTags = answerOptions.map(option => option.tag);
+  updatedColumns = answerOptions.map(option => option.column);
 
   // Update the quiz content and randomized answer options
   quizContentElements.forEach((contentElement) => {
@@ -44,8 +48,114 @@ function updateQuiz() {
 
   answerOptionElements.forEach((answerOptionElement, index) => {
     answerOptionElement.textContent = updatedTags[index];
+    answerOptionElement.dataset.column = updatedColumns[index]; // Add the associated column as a data attribute
+  
   });
+
+
+
+ // Find the index of the correct answer in the updatedTags array
+ const correctAnswerIndex = updatedTags.findIndex(tag => tag === correctAnswer);
+
+
+   // Remove the "dark" class from all answer options
+   answerOptionElements.forEach((answerOptionElement) => {
+    answerOptionElement.classList.remove('dark');
+     // Add the "dark" class to the correct answer option
+
+
+     
+// Remove the "dark" class from all answer options
+answerOptionElements.forEach((answerOptionElement) => {
+  answerOptionElement.classList.remove('dark');
+});
+
+// Add the "dark" class to the correct answer option
+if (firstChoiceButton.classList.contains("dark")) {
+  answerOptionElements[correctAnswerIndex].classList.add('dark');
 }
+
+
+
+
+  });
+
+ 
+
+
+  // Console log the updated quiz data
+  console.log(quizLine);
+  console.log(correctAnswerIndex);
+  console.log(correctAnswerColumn);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let quizData = []; // Initialize an empty array to store quiz data
+// let currentIndex = -1; // Initialize the current quiz line index to -1
+// let updateTimeout = null; // Store the timeout reference
+
+// // Define variables to store the updated quiz content and tags
+// let updatedContent = '';
+// let updatedTags = [];
+
+// // Function to update the quiz content and tags
+// function updateQuiz() {
+//   // Increment the current index
+//   currentIndex = (currentIndex + 1) % quizData.length;
+
+//   // Get the quiz line at the current index
+//   const quizLine = quizData[currentIndex];
+//   const correctAnswer = quizLine.tag1;
+
+
+//   // Randomize the order of answer options
+//   const answerOptions = [
+//     quizLine.tag1,
+//     quizLine.tag2,
+//     quizLine.tag3
+//   ].sort(() => Math.random() - 0.5);
+
+
+
+//   // Store the updated content and tags
+//   updatedContent = quizLine.content;
+//   updatedTags = answerOptions;
+
+//   // Update the quiz content and randomized answer options
+//   quizContentElements.forEach((contentElement) => {
+//     contentElement.textContent = updatedContent;
+//   });
+
+//   answerOptionElements.forEach((answerOptionElement, index) => {
+//     answerOptionElement.textContent = updatedTags[index];
+//   });
+
+//   const correctAnswerIndex = updatedTags.findIndex(tag => tag === correctAnswer);
+
+
+//     // Console log the updated quiz data
+//     console.log(quizLine);
+//     console.log( correctAnswerIndex)
+// }
+
+
+
+
+
+
 
 // // Create the bookmarked card with updated content and tags
 // function createBookmarkedCard() {
@@ -100,37 +210,83 @@ fetch('quiz.csv')
 
 
 
+
+
+
 firstChoiceButton.addEventListener("click", () => {
   firstChoiceButton.classList.toggle("dark");
   AnswerButton.classList.toggle("dark");
+  AnswerButton2.classList.toggle("dark"); // Remove the "dark" class
+  AnswerButton3.classList.toggle("dark"); // Remove the "dark" class
+    
+
+
+
+
+
+
   //      // allows text content to be the content I set in the
 //     // html element called data-original-text
  originalTextElement.textContent = originalTextElement.dataset.originalText;
   
 
+//  if submit  button(firstChoice button) is no longer in dark toggle, display "Show Answer" which is the 
+//  conditional text. Then
+
   if (!firstChoiceButton.classList.contains("dark")) {
     originalTextElement.style.display = "none";
     conditionalTextElement.style.display = "block";
     AnswerButton.classList.remove("dark");
+  
+
+//  if submit button is still in dark toggle, display "Hide Answer" which is the 
+//  text in the data-original-text. Then add the answer as a toogle dark
+
   } else {
     originalTextElement.style.display = "block";
     conditionalTextElement.style.display = "none";
     AnswerButton.classList.add("dark");
+ 
   }
+
+
+
+
+
+
+
+
+
+   
+ 
+ 
 
   // Clear the previous timeout
   clearTimeout(updateTimeout);
+  updateQuiz();
 
     // Schedule the quiz update after 1 second
     updateTimeout = setTimeout(() => {
-      updateQuiz();
+
 originalTextElement.textContent=  conditionalTextElement.textContent ; // Restore the original text
       firstChoiceButton.classList.remove("dark"); // Remove the "dark" class
       AnswerButton.classList.remove("dark"); // Remove the "dark" class
+        AnswerButton2.classList.remove("dark"); // Remove the "dark" class
+        AnswerButton3.classList.remove("dark"); // Remove the "dark" class
+          
+
+
   
-    }, 1000);
- 
+    }, 8000);
+    AnswerButton.classList.remove("dark"); // Remove the "dark" class
+    updateQuiz();
+   
+
 });
+
+
+
+
 
 
 
@@ -300,17 +456,6 @@ function createNewCard() {
   cardList.appendChild(listItem);
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
