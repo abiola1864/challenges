@@ -17,6 +17,8 @@ let updateTimeout = null; // Store the timeout reference
  let updatedContent = '';
  let updatedTags = [];
 
+
+ 
 // Function to update the quiz content and tags
 function updateQuiz() {
   // Increment the current index
@@ -220,11 +222,6 @@ firstChoiceButton.addEventListener("click", () => {
   AnswerButton3.classList.toggle("dark"); // Remove the "dark" class
     
 
-
-
-
-
-
   //      // allows text content to be the content I set in the
 //     // html element called data-original-text
  originalTextElement.textContent = originalTextElement.dataset.originalText;
@@ -371,9 +368,13 @@ footer.addEventListener('mouseleave', handleMouseLeave);
 
 const bookmarkIcon = document.querySelector('.bookmark-icon');
 
-bookmarkIcon.addEventListener('click', () => {
+bookmarkIcon.addEventListener(
+  'click', () => {
   bookmarkIcon.classList.toggle('active');
-});
+}
+
+
+);
 
 
 
