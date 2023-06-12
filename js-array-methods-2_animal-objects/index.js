@@ -105,6 +105,8 @@ const allAnimalsInEuropeWeighLessThanOnehundred = animals
   .every((animal) => animal.weight < 100);
 
 
+
+
   const animalsSortedAlphabetically = animals
   .slice()
   .sort((a, b) => {
