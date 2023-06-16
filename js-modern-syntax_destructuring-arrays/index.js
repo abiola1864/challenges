@@ -41,11 +41,11 @@ export const [student1, [student2, student3], [student4, student5]] = nestedStud
 // Spread the values of the values array into the function call of the add function.
 // Keep in mind that you need to export the variable 'result' to make the test work.
 
-const values = [1, 6, 7, 9, 12, 5, 4];
 
 // const result = add(1); // Spread values inside this function call
 
 
+const values = [1, 6, 7, 9, 12, 5, 4];
 export const result = add(...values);
 
 function add(...values) {
