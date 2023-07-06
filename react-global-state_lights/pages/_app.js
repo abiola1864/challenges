@@ -21,8 +21,6 @@ export default function App({ Component, pageProps }) {
   const [lights, setLights] = useState(initialLight);
   const lightsOnCount = lights.filter((light) => light.isOn).length;
 
-
-
 const toggleLight = (id) => {
   setLights((prevLights) => {
     const updatedLights = prevLights.map((light) => {
