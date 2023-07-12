@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-// describes the 'shape' of each Joke object
+// describes the 'shape' of each Product object
 const productSchema = new Schema({
     name: { type: String, required: true },
   description: { type: String, required: true },
